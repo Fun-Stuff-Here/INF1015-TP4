@@ -1,28 +1,37 @@
 ﻿/*
-* Programme qui lit un fichier de film et le manipule, TD3-INF1015
-*\file		td3.cpp
+* Programme qui lit un fichier de film et livres et les manipules, TD4-INF1015
+*\file		TP4.cpp
 *\author	Elizabeth Michaud 2073093, Nicolas Dépelteau 2083544
 *\date		7 mars 2021
-* Créé le	23 février 2021
+* Créé le	26 février 2021
 */
 
 #define _CRT_SECURE_NO_WARNINGS // On permet d'utiliser les fonctions de copies de chaînes qui sont considérées non sécuritaires.
-#include "ListeFilms.hpp"
+#include "Bibliotheque.hpp"
 
 using namespace std;
 using namespace gsl;
 using namespace iter;
 
+Bibliotheque Bibliotheque::bibliotheque_; //Instance de la bibliotheque
 
 int main()
 {
-	#ifdef VERIFICATION_ALLOCATION_INCLUS
+#ifdef VERIFICATION_ALLOCATION_INCLUS
 	bibliotheque_cours::VerifierFuitesAllocations verifierFuitesAllocations;
-	#endif
+#endif
 	bibliotheque_cours::activerCouleursAnsi();  // Permet sous Windows les "ANSI escape code" pour changer de couleurs https://en.wikipedia.org/wiki/ANSI_escape_code ; les consoles Linux/Mac les supportent normalement par défaut.
 
 	static const string ligneDeSeparation = "\n\033[35m═══════════════════════════════════════\033[0m\n";
+	
+	auto& bibliotheque = Bibliotheque::get();
 
+	bibliotheque.ajouterLivres("livres.txt");
+
+	
+}
+
+	/*
 	ListeFilms listeFilms{ "films.bin" };
 
 	cout << ligneDeSeparation << "Le premier film de la liste est:" << endl;
@@ -45,7 +54,7 @@ int main()
 
 	cout << ligneDeSeparation << "Chap 7-8 :" << endl;
 	//chap 7-8
-	Film skylien = listeFilms[0]; /* listeFilms[0] ou *listeFilms[0] selon ce qui fait du sens */
+	Film skylien = listeFilms[0]; /* listeFilms[0] ou *listeFilms[0] selon ce qui fait du sens 
 	skylien.titre = "Skylien";
 	skylien.acteurs[0] = listeFilms[1]->acteurs[0];
 	skylien.acteurs[0]->nom = "Daniel Wroughton Craig";
@@ -90,4 +99,4 @@ int main()
 	listeFilms.detruire();
 }
 
-
+*/
