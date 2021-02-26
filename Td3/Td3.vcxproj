@@ -24,6 +24,7 @@
     <ProjectGuid>{ddf6f012-32bc-4512-a0a1-008d55b78b6a}</ProjectGuid>
     <RootNamespace>Td3</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>TP4</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -150,7 +151,7 @@
   <ItemGroup>
     <ClCompile Include="..\bibliotheque_cours.cpp" />
     <ClCompile Include="..\ListeFilms.cpp" />
-    <ClCompile Include="..\td3.cpp" />
+    <ClCompile Include="..\TP4.cpp" />
     <ClCompile Include="..\verification_allocation.cpp" />
   </ItemGroup>
   <ItemGroup>

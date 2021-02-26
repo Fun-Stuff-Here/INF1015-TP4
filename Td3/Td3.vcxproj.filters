@@ -21,10 +21,10 @@
     <ClCompile Include="..\ListeFilms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\td3.cpp">
+    <ClCompile Include="..\verification_allocation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\verification_allocation.cpp">
+    <ClCompile Include="..\TP4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
