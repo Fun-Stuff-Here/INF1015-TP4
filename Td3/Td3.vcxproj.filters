@@ -39,6 +39,9 @@
     <ClCompile Include="..\Acteur.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Livre.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\bibliotheque_cours.hpp">

@@ -6,7 +6,6 @@
 * Créé le	26 février 2021
 */
 #include "Film.hpp"
-#include "Bibliotheque.hpp"
 
 using namespace std;
 using namespace gsl;

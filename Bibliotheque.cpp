@@ -98,3 +98,16 @@ shared_ptr<Acteur> Bibliotheque::trouverActeur(const string& nom) const
 	}
 	return acteur;
 }
+
+
+void Bibliotheque::enleverFilm(std::unique_ptr<Film> film)
+{ items_.erase(find(items_.begin(), items_.end(), film)); }
+void Bibliotheque::ajouterFilm(std::unique_ptr<Film> film)
+{ items_.push_back(move(film)); }
+
+
+Bibliotheque& Bibliotheque::get()
+{ return bibliotheque_; }
+
+
+Bibliotheque::Bibliotheque() { items_ = {}; };

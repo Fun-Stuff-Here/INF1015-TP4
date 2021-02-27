@@ -40,3 +40,6 @@ std::shared_ptr<Acteur> Acteur::lire(std::istream& fichier)
 		return  acteur; 
 	}
 }
+
+
+std::string Acteur::getNom() { return nom_; }

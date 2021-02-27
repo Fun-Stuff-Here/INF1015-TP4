@@ -7,29 +7,27 @@
 */
 #pragma once
 
+#ifndef FILM_H
+#define FILM_H
 
-#include <iostream>
-#include <memory>
 #include <string>
 #include <vector>
+#include <istream>
+#include <memory>
 
 #include "Item.hpp"
 #include "Acteur.hpp"
 
 
-#ifndef FILM_H
-#define FILM_H
-
 class Film : public Item {
 public:
 	Film() = default;
-	Film(const std::string& titre, int annee, std::string& realisateur, int recette, std::vector<std::shared_ptr<Acteur>>&& acteurs);
+	Film(const std::string& titre, int annee, std::string& realisateur,
+		 int recette, std::vector<std::shared_ptr<Acteur>>&& acteurs);
 
 	static std::unique_ptr<Film> lire(std::istream& fichier);
 
 	std::shared_ptr<Acteur> trouverActeur(const std::string& nomRechercher) const;
-
-protected:
 
 private:
 	std::string realisateur_ = "";

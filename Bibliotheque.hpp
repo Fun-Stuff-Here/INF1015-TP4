@@ -6,6 +6,8 @@
 * Créé le	26 février 2021
 */
 #pragma once
+#ifndef BIBLIOTHEQUE_H
+#define BIBLIOTHEQUE_H
 
 #include "bibliotheque_cours.hpp"
 #include "verification_allocation.hpp" // Nos fonctions pour le rapport de fuites de mémoire.
@@ -33,22 +35,19 @@
 typedef uint8_t UInt8;
 typedef uint16_t UInt16;
 
-#ifndef BIBLIOTHEQUE_H
-#define BIBLIOTHEQUE_H
-
 class Bibliotheque 
 {
 public:
 	Bibliotheque(const Bibliotheque&) = delete;
-	static Bibliotheque& get() { return bibliotheque_; }
+	static Bibliotheque& get();
 	void ajouterFilms(const std::string& nomFichier);
 	void ajouterLivres(const std::string& nomFichier);
 	std::shared_ptr<Acteur> trouverActeur(const std::string& nom) const;
-	void enleverFilm(std::unique_ptr<Film> film) { items_.erase(find(items_.begin(), items_.end(), film)); }
-	void ajouterFilm(std::unique_ptr<Film> film) { items_.push_back(move(film)); }
+	void enleverFilm(std::unique_ptr<Film> film);
+	void ajouterFilm(std::unique_ptr<Film> film);
 
 private:
-	Bibliotheque() { items_ = {}; };
+	Bibliotheque();
 	static Bibliotheque bibliotheque_;
 	std::vector<std::unique_ptr<Item>> items_;
 

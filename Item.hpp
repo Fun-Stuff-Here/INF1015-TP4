@@ -6,16 +6,16 @@
 * Créé le	26 février 2021
 */
 #pragma once
-
-#include "Bibliotheque.hpp"
-
 #ifndef ITEM_H
 #define ITEM_H
+
+#include <string>
+
 
 class Item
 {
 public:
-	Item(const std::string& titre, int annee) : titre_(titre), annee_(annee) {}
+	Item(const std::string& titre, int annee);
 	virtual void feee(void);
 protected:
 

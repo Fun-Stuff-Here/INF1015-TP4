@@ -6,14 +6,13 @@
 * Créé le	26 février 2021
 */
 #pragma once
+#ifndef FILMLIVRE_H
+#define FILMLIVRE_H
 
 #include <iostream>
 
 #include "Film.hpp"
 #include "Livre.hpp"
-
-#ifndef FILMLIVRE_H
-#define FILMLIVRE_H
 
 class FilmLivre : public Film, public Livre
 {

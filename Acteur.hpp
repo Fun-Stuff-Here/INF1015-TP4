@@ -6,21 +6,18 @@
 * Créé le	26 février 2021
 */
 #pragma once
-
-#include<memory>
-#include <string>
-#include <iostream>
-//#include "Bibliotheque.hpp"
-
 #ifndef ACTEUR_H
 #define ACTEUR_H
 
+#include <string>
+#include <istream>
+#include <memory>
 
 class Acteur{
 public:
 	Acteur() = default;
 	Acteur(const std::string& nom, const int anneeNaissance, const char sexe);
-	std::string getNom() { return nom_; }
+	std::string getNom();
 	static std::shared_ptr<Acteur> lire(std::istream& fichier);
 	//TODO afficher acteur 
 

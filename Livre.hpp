@@ -6,26 +6,19 @@
 * Créé le	26 février 2021
 */
 #pragma once
+#ifndef LIVRE_H
+#define LIVRE_H
 
-//#include "Bibliotheque.hpp"
 #include <string>
 
 #include "Item.hpp"
-
-
-#ifndef LIVRE_H
-#define LIVRE_H
 
 class Livre : public Item
 {
 public:
 	Livre() = default;
-	Livre(const std::string& auteur, int nMillionsCopiesVendues, int nPages, std::string& titre, int annee) :
-		Item(titre, annee),
-		auteur_(auteur),
-		nMillionsCopiesVendues_(nMillionsCopiesVendues),
-		nPages_(nPages)
-	{}
+	Livre(const std::string& auteur, int nMillionsCopiesVendues,
+		  int nPages, std::string& titre, int annee);
 
 
 protected:

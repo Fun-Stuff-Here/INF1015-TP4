@@ -156,6 +156,7 @@
     <ClCompile Include="..\Film.cpp" />
     <ClCompile Include="..\Item.cpp" />
     <ClCompile Include="..\ListeFilms.cpp" />
+    <ClCompile Include="..\Livre.cpp" />
     <ClCompile Include="..\TP4.cpp" />
     <ClCompile Include="..\verification_allocation.cpp" />
   </ItemGroup>
