@@ -43,9 +43,9 @@ void Bibliotheque::ajouterFilms(const std::string& nomFichier)
 
 	int nFilms = lireUint16(fichier);
 
-	for (int i : iter::range(nFilms))
+	for (int _ : iter::range(nFilms))
 	{
-		unique_ptr<Film> film = Film::lire(fichier);
+		unique_ptr<Film> film = move(Film::lire(fichier));
 		items_.push_back(move(film));
 	}
 }
@@ -109,5 +109,3 @@ void Bibliotheque::ajouterFilm(std::unique_ptr<Film> film)
 Bibliotheque& Bibliotheque::get()
 { return bibliotheque_; }
 
-
-Bibliotheque::Bibliotheque() { items_ = {}; };

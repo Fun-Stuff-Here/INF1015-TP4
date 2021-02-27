@@ -33,7 +33,7 @@ std::unique_ptr<Film> Film::lire(istream& fichier)
 	//Allocation de la liste d'acteur
 	std::vector<std::shared_ptr<Acteur>> acteurs;
 
-	for (int i : iter::range(nActeurs))
+	for (int _ : iter::range(nActeurs))
 	{
 		acteurs.push_back(Acteur::lire(fichier));
 	}

@@ -47,7 +47,7 @@ public:
 	void ajouterFilm(std::unique_ptr<Film> film);
 
 private:
-	Bibliotheque();
+	Bibliotheque()=default;
 	static Bibliotheque bibliotheque_;
 	std::vector<std::unique_ptr<Item>> items_;
 

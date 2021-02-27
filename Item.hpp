@@ -15,6 +15,7 @@
 class Item
 {
 public:
+	Item() = default;
 	Item(const std::string& titre, int annee);
 	virtual void feee(void);
 protected:
