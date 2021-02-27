@@ -6,6 +6,7 @@
 * Créé le	26 février 2021
 */
 #include "Livre.hpp"
+#include "Bibliotheque.hpp"
 
 Livre::Livre(const std::string& auteur, int nMillionsCopiesVendues, int nPages, std::string& titre, int annee) :
 	Item(titre, annee),

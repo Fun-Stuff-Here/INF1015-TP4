@@ -6,6 +6,7 @@
 * Créé le	26 février 2021
 */
 #include "Item.hpp"
+#include "Bibliotheque.hpp"
 
 Item::Item(const std::string& titre, int annee) : titre_(titre), annee_(annee) {}
 
