@@ -54,8 +54,7 @@ void Bibliotheque::ajouterFilms(const std::string& nomFichier)
 
 void Bibliotheque::ajouterLivres(const std::string& nomFichier)
 {
-	ifstream fichier(nomFichier, ios::binary);
-	fichier.exceptions(ios::failbit);
+	ifstream fichier(nomFichier);
 	
 
 	string titre = "";
