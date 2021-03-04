@@ -19,17 +19,18 @@
 #include "Acteur.hpp"
 
 
-class Film : public Item {
+class Film : virtual public Item {
 public:
 	Film() = default;
+	~Film();
 	Film(const std::string& titre, int annee, std::string& realisateur,
 		 int recette, std::vector<std::shared_ptr<Acteur>>&& acteurs);
 
 	static std::unique_ptr<Film> lire(std::istream& fichier);
-
 	std::shared_ptr<Acteur> trouverActeur(const std::string& nomRechercher) const;
 
-private:
+protected:
+	void print(std::ostream& ostream) const override;
 	std::string realisateur_ = "";
 	int recette_;
 	std::vector<std::shared_ptr<Acteur>> acteurs_;

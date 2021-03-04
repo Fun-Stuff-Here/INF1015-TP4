@@ -10,23 +10,26 @@
 #define ITEM_H
 
 #include <string>
+#include <iostream>
 
 
 class Item
 {
 public:
-	Item() = default;
 	Item(const std::string& titre, int annee);
-	virtual void feee(void);
-protected:
+	friend std::ostream& operator<< (std::ostream& ostream, const Item& item);
+	virtual ~Item() = default;
+	std::string getTitre() const;
+	int getAnnee() const;
 
-private:
+protected:
+	virtual void print(std::ostream& ostream) const;
 	std::string titre_;
 	int annee_;
 };
 
 
-
+std::ostream& operator<< (std::ostream& ostream,const Item& item);
 
 
 

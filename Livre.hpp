@@ -13,17 +13,16 @@
 
 #include "Item.hpp"
 
-class Livre : public Item
+class Livre : virtual public Item
 {
 public:
 	Livre() = default;
 	Livre(const std::string& auteur, int nMillionsCopiesVendues,
 		  int nPages, std::string& titre, int annee);
-
+	~Livre() = default;
 
 protected:
-
-private:
+	void print(std::ostream& ostream) const override;
 	std::string auteur_ = "";
 	int nMillionsCopiesVendues_ = 0;
 	int nPages_ = 0;

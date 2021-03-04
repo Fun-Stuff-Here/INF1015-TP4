@@ -17,11 +17,11 @@
 class FilmLivre : public Film, public Livre
 {
 public:
-
+	FilmLivre(Livre livre, Film film);
+	~FilmLivre()=default;
 
 protected:
-
-private:
+	void print(std::ostream& ostream) const override;
 
 };
 

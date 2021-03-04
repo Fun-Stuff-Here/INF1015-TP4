@@ -39,12 +39,16 @@ class Bibliotheque
 {
 public:
 	Bibliotheque(const Bibliotheque&) = delete;
+	~Bibliotheque();
 	static Bibliotheque& get();
 	void ajouterFilms(const std::string& nomFichier);
 	void ajouterLivres(const std::string& nomFichier);
 	std::shared_ptr<Acteur> trouverActeur(const std::string& nom) const;
-	void enleverFilm(std::unique_ptr<Film> film);
-	void ajouterFilm(std::unique_ptr<Film> film);
+	void enlever(std::unique_ptr<Item>& item);
+	void ajouter(std::unique_ptr<Item>&& item);
+	Film* trouverFilmSi(const std::function<bool(Film*)>& critere) const;
+	Livre* trouverLivreSi(const std::function<bool(Livre*)>& critere) const;
+	friend std::ostream& operator<< (std::ostream& ostream, const Bibliotheque& bibliotheque);
 
 private:
 	Bibliotheque()=default;
@@ -61,7 +65,7 @@ public:
 
 };
 
-
+std::ostream& operator<< (std::ostream& ostream, const Bibliotheque& bibliotheque);
 
 
 

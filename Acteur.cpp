@@ -43,3 +43,9 @@ std::shared_ptr<Acteur> Acteur::lire(std::istream& fichier)
 
 
 std::string Acteur::getNom() { return nom_; }
+
+std::ostream& operator<< (std::ostream& ostream, const Acteur& acteur)
+{
+	ostream << "\t" << acteur.nom_ << ", " << acteur.anneeNaissance_ << ", " << acteur.sexe_ << std::endl;
+	return ostream;
+}

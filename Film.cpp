@@ -52,3 +52,22 @@ shared_ptr<Acteur> Film::trouverActeur(const string& nomRechercher) const
 	}
 	return nullptr;
 }
+
+
+void Film::print(std::ostream& ostream) const
+{
+	Item::print(ostream);
+	ostream << realisateur_ << ", " << recette_ << std::endl;
+	for(auto&& acteur : acteurs_)
+	{
+		ostream << *acteur;
+	}
+}
+
+Film::~Film()
+{
+	for(auto&& acteur : acteurs_)
+	{
+		acteur = nullptr;
+	}
+}

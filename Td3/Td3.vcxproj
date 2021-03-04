@@ -154,6 +154,7 @@
     <ClCompile Include="..\Bibliotheque.cpp" />
     <ClCompile Include="..\bibliotheque_cours.cpp" />
     <ClCompile Include="..\Film.cpp" />
+    <ClCompile Include="..\FilmLivre.cpp" />
     <ClCompile Include="..\Item.cpp" />
     <ClCompile Include="..\ListeFilms.cpp" />
     <ClCompile Include="..\Livre.cpp" />

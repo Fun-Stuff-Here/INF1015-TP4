@@ -14,3 +14,9 @@ Livre::Livre(const std::string& auteur, int nMillionsCopiesVendues, int nPages, 
 	nMillionsCopiesVendues_(nMillionsCopiesVendues),
 	nPages_(nPages)
 {}
+
+void Livre::print(std::ostream& ostream) const
+{
+	Item::print(ostream);
+	ostream << auteur_ << ", " << nMillionsCopiesVendues_ << ", " << nPages_ <<std::endl;
+}

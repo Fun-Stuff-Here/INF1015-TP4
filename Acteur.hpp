@@ -12,14 +12,16 @@
 #include <string>
 #include <istream>
 #include <memory>
+#include <iostream>
 
 class Acteur{
 public:
 	Acteur() = default;
 	Acteur(const std::string& nom, const int anneeNaissance, const char sexe);
+	~Acteur() = default;
 	std::string getNom();
 	static std::shared_ptr<Acteur> lire(std::istream& fichier);
-	//TODO afficher acteur 
+	friend std::ostream& operator<< (std::ostream& ostream, const Acteur& item);
 
 private:
 	std::string nom_ = "";
@@ -28,6 +30,7 @@ private:
 
 };
 
+std::ostream& operator<< (std::ostream& ostream, const Acteur& item);
 
 
 

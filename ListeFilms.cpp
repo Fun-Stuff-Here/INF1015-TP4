@@ -54,15 +54,3 @@ ostream& operator<< (ostream& ostream, const Film* film)
 	return ostream;
 }
 
-
-Film* ListeFilms::trouverFilmSi(const std::function<bool(Film*)>& critere) const
-{
-
-	for (auto&& film : *this)
-	{
-		if (critere(film))
-			return film;
-	}
-	return nullptr;
-}
-
