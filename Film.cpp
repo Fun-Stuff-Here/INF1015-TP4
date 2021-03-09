@@ -23,24 +23,6 @@ Film::Film(const std::string& titre, int annee, std::string& realisateur,
 	acteurs_ = acteurs;
 }
 
-std::unique_ptr<Film> Film::lire(istream& fichier)
-{
-	string titre = Bibliotheque::lireString(fichier);
-	string realisateur = Bibliotheque::lireString(fichier);
-	int anneeSortie = Bibliotheque::lireUint16(fichier);
-	int recette = Bibliotheque::lireUint16(fichier);
-	int nActeurs = Bibliotheque::lireUint8(fichier);
-	//Allocation de la liste d'acteur
-	std::vector<std::shared_ptr<Acteur>> acteurs;
-
-	for (int _ : iter::range(nActeurs))
-	{
-		acteurs.push_back(Acteur::lire(fichier));
-	}
-	return make_unique<Film>(titre, anneeSortie, realisateur, recette,
-		(std::vector<std::shared_ptr<Acteur>>&&)acteurs);
-
-}
 
 
 shared_ptr<Acteur> Film::trouverActeur(const string& nomRechercher) const

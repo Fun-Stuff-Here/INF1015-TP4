@@ -20,7 +20,6 @@ public:
 	Acteur(const std::string& nom, const int anneeNaissance, const char sexe);
 	~Acteur() = default;
 	std::string getNom();
-	static std::shared_ptr<Acteur> lire(std::istream& fichier);
 	friend std::ostream& operator<< (std::ostream& ostream, const Acteur& item);
 
 private:

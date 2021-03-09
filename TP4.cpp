@@ -13,8 +13,6 @@ using namespace std;
 using namespace gsl;
 using namespace iter;
 
-Bibliotheque Bibliotheque::bibliotheque_; //Instance de la bibliotheque
-
 int main()
 {
 #ifdef VERIFICATION_ALLOCATION_INCLUS
@@ -24,7 +22,7 @@ int main()
 
 	static const string ligneDeSeparation = "\n\033[35m═══════════════════════════════════════\033[0m\n";
 	
-	auto& bibliotheque = Bibliotheque::get();
+	Bibliotheque bibliotheque;
 
 	bibliotheque.ajouterFilms("films.bin");
 	bibliotheque.ajouterLivres("livres.txt");

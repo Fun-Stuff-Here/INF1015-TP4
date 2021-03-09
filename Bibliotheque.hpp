@@ -39,8 +39,8 @@ class Bibliotheque
 {
 public:
 	Bibliotheque(const Bibliotheque&) = delete;
-	~Bibliotheque();
-	static Bibliotheque& get();
+	Bibliotheque()=default;
+	~Bibliotheque()=default;
 	void ajouterFilms(const std::string& nomFichier);
 	void ajouterLivres(const std::string& nomFichier);
 	std::shared_ptr<Acteur> trouverActeur(const std::string& nom) const;
@@ -51,18 +51,17 @@ public:
 	friend std::ostream& operator<< (std::ostream& ostream, const Bibliotheque& bibliotheque);
 
 private:
-	Bibliotheque()=default;
-	static Bibliotheque bibliotheque_;
+	
 	std::vector<std::unique_ptr<Item>> items_;
 
-public:
+private:
 
+	std::shared_ptr<Acteur>lireActeur(std::istream& fichier);
+	std::unique_ptr<Film> lireFilm(std::istream& fichier);
 	static UInt8 lireUint8(std::istream& fichier);
 	static UInt16 lireUint16(std::istream& fichier);
 	static std::string lireString(std::istream& fichier);
 	
-
-
 };
 
 std::ostream& operator<< (std::ostream& ostream, const Bibliotheque& bibliotheque);

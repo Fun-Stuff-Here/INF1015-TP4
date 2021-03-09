@@ -45,10 +45,53 @@ void Bibliotheque::ajouterFilms(const std::string& nomFichier)
 
 	for (int _ : iter::range(nFilms))
 	{
-		unique_ptr<Film> film = move(Film::lire(fichier));
+
+		unique_ptr<Film> film = move(lireFilm(fichier));
 		items_.push_back(move(film));
 	}
 }
+
+std::unique_ptr<Film> Bibliotheque::lireFilm(istream& fichier)
+{
+	string titre = lireString(fichier);
+	string realisateur = lireString(fichier);
+	int anneeSortie = lireUint16(fichier);
+	int recette = lireUint16(fichier);
+	int nActeurs = lireUint8(fichier);
+	//Allocation de la liste d'acteur
+	std::vector<std::shared_ptr<Acteur>> acteurs;
+
+	for (int _ : iter::range(nActeurs))
+	{
+		acteurs.push_back(lireActeur(fichier));
+	}
+	return make_unique<Film>(titre, anneeSortie, realisateur, recette,
+		(std::vector<std::shared_ptr<Acteur>>&&)acteurs);
+
+}
+
+std::shared_ptr<Acteur> Bibliotheque::lireActeur(std::istream& fichier)
+{
+	string nom = lireString(fichier);
+	int anneeNaissance = lireUint16(fichier);
+	char sexe = lireUint8(fichier);
+
+	shared_ptr<Acteur> acteur = make_shared<Acteur>(nom, anneeNaissance, sexe);
+
+	shared_ptr<Acteur> acteurExistant = trouverActeur(nom);
+	//check si existant
+	if (acteurExistant)
+	{
+		acteur = nullptr;
+		return acteurExistant;
+	}
+	else
+	{	//Debug line
+		cout << acteur->getNom() << endl;
+		return  acteur;
+	}
+}
+
 
 
 
@@ -105,11 +148,6 @@ void Bibliotheque::ajouter(unique_ptr<Item>&& item)
 }
 
 
-Bibliotheque& Bibliotheque::get()
-{
-	return bibliotheque_;
-}
-
 Film* Bibliotheque::trouverFilmSi(const std::function<bool(Film*)>& critere) const
 {
 	for (auto&& item : items_)
@@ -149,12 +187,3 @@ std::ostream& operator<< (std::ostream& ostream, const Bibliotheque& bibliothequ
 }
 
 
-
-Bibliotheque::~Bibliotheque()
-{
-	for(auto&& item : items_)
-	{
-		item = nullptr;
-	}
-	delete &bibliotheque_;
-}
