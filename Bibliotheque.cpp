@@ -43,9 +43,10 @@ void Bibliotheque::ajouterFilms(const std::string& nomFichier)
 
 	int nFilms = lireUint16(fichier);
 
-	for (int _ : iter::range(nFilms))
+	//Le warning dit que i n'est pas reference sooooooooo on lui fait faire une comparaison 
+	for (int i : iter::range(nFilms))
 	{
-
+		i = 0;
 		unique_ptr<Film> film = move(lireFilm(fichier));
 		items_.push_back(move(film));
 	}
@@ -61,8 +62,10 @@ std::unique_ptr<Film> Bibliotheque::lireFilm(istream& fichier)
 	//Allocation de la liste d'acteur
 	std::vector<std::shared_ptr<Acteur>> acteurs;
 
-	for (int _ : iter::range(nActeurs))
+	//Le warning dit que i n'est pas reference sooooooooo on lui fait faire une comparaison 
+	for (int i : iter::range(nActeurs))
 	{
+		i = 0;
 		acteurs.push_back(lireActeur(fichier));
 	}
 	return make_unique<Film>(titre, anneeSortie, realisateur, recette,

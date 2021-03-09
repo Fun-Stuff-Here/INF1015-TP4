@@ -125,6 +125,7 @@
       <AdditionalIncludeDirectories>../include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -170,10 +171,7 @@
     <ClInclude Include="..\Film.hpp" />
     <ClInclude Include="..\FilmLivre.hpp" />
     <ClInclude Include="..\Item.hpp" />
-    <ClInclude Include="..\Liste.hpp" />
-    <ClInclude Include="..\ListeFilms.hpp" />
     <ClInclude Include="..\Livre.hpp" />
-    <ClInclude Include="..\structures.hpp" />
     <ClInclude Include="..\verification_allocation.hpp" />
   </ItemGroup>
   <ItemGroup>

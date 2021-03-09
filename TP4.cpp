@@ -39,6 +39,9 @@ int main()
 
 	cout << bibliotheque << endl;
 
+	bibliotheque.trouverFilmSi([](Film* film) -> bool {return (film->getTitre()== "Not there"); });
+
+	bibliotheque.trouverLivreSi([](Livre* livre) -> bool {return (livre->getTitre() == "Not there"); });
 
 }	
 

@@ -53,16 +53,7 @@
     <ClInclude Include="..\debogage_memoire.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\ListeFilms.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\structures.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\verification_allocation.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Liste.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Acteur.hpp">
